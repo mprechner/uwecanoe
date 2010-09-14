@@ -44,6 +44,7 @@ public class ContentPanel extends Composite {
         content.setHTML(text);
     }
     
+    
     public HTML getContent() {
         return this.content;
     }
