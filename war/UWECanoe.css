@@ -1,0 +1,247 @@
+/** Add css rules here for your application. */
+
+.loading {
+    cursor: wait;
+    }
+    
+body {
+	background-color: #c9dbed;
+	}
+	
+	
+.defaultText {
+	font-family:"Trebuchet MS", Arial, serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #02407b;
+	}
+	
+.mainApp {
+	background-color: #c9dbed;
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.titlePanel {
+	background: #ffffff url('titlePanelBg.png') repeat-x right top;
+	border: solid #39badf 1px;
+	margin-top: 10px;
+	margin-left: 10px; 
+	margin-right: 10px;
+	margin-bottom: 10px;
+	height: 152px;
+	width: 100%;
+	}
+	
+.menuPanel {
+	margin-left: 15px; 
+	width: 200px;
+	}
+	
+.rightContentPanel {
+    margin-right: 10px; 
+    font-family:"Trebuchet MS", Arial, serif;
+    font-size: 14px;
+    font-weight: 600;
+    width: 200px;
+    float: right;
+   
+    }
+    
+.verticalPhotoPanel {
+    background-color: GREEN;
+    margin-left: 10px;
+    }  
+    
+.centerConentPanel {
+    margin-left: 10px;
+    margin-right: 10px; 
+    width: 100%;
+    }
+    
+.contentPanel {
+	background-color: #dee4ea;
+	border: solid 1px #02407b;
+	-moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    width: 32%;
+    float: left;
+    margin-right: 7px;
+    font-family:"Trebuchet MS", Arial, serif;
+    
+}
+    
+.titleWelcomeTextLabel {
+    border-top: solid BLACK 1px;
+    font-size: 10px;
+    color: WHITE;
+    padding-left: 50px;
+    font-family:"Trebuchet MS", Arial, serif;
+    padding-top: 2px;
+    } 
+    
+.contentWidgetBgLight {
+	background-color: #dee4ea;
+	border: solid 1px #02407b;
+	} 
+	 
+.topRightBorderLight {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.topLeftBorderLight {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.bottomLeftBorderLight {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.bottomRightBorderLight {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.contentWidgetIcon {
+	float: left;
+	padding-left: 5px;
+	padding-top: 3px;
+    }
+    
+.contentWidgetLabel {
+	line-height: 1.5;
+	border-bottom: solid 1px #02407b;
+	padding-bottom: 0px;
+	margin-left: 27px;
+	padding-left: 7px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	height: 21px;
+	color: #02407b;
+	font-size: 14px;
+	font-weight: 600;
+	}
+	
+.contentWidgetHTML {
+	min-height: 40px;
+	color: #02407b;
+	font-size: 12px;
+    font-weight: normal;
+	}
+	
+.menuItem {
+	background-color: #dee4ea;
+    border: solid 1px #02407b;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    border-radius: 7px;
+    margin-bottom: 4px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+	}
+
+.gwt-TreeItem {
+	font-family:"Trebuchet MS", Arial, serif;
+	color: #02407b;
+	cursor: pointer;
+	}
+
+.rootMenuItem .gwt-TreeItem {
+	font-weight: 600;
+	font-size: 15px;
+	}
+	
+.childMenuItem .gwt-TreeItem {
+    font-weight: normal;
+    font-size: 12px;
+    }
+    
+.menuTreeMouseOver {
+	background-color: #66a4df;
+}
+
+.menuTreeMouseOver .gwt-TreeItem {
+	color: WHITE;
+	}
+
+.menuTreeSelected {
+    background-color: #66a4df;
+}
+
+.menuTreeSelected .gwt-TreeItem {
+    color: WHITE;
+    }
+
+.gwt-Tree .gwt-TreeItem-selected {
+	background-color: none;
+	color: #FFAB32;
+	}
+	
+	
+.centreImage {
+	border: solid 1px #02407b;
+	padding: 2px 2px 2px 2px;
+	width: 98%;
+	height: 300px;
+	margin-bottom: 8px;
+	}
+	
+.mainContent {
+	width: 98%;
+	float: left;
+	}
+	
+.editLabel {
+	float: right;
+	font-size: 12px;
+	color: BLUE;
+	margin-right: 5px;
+	margin-bottom: 3px;
+	cursor: pointer;
+	}
+	
+.loggedInLabel {
+	font-family:"Trebuchet MS", Arial, serif;
+	font-size: 12px;
+	color: #FFAB32;
+	text-align: right;
+	}
+	
+.logLink {
+	font-family:"Trebuchet MS", Arial, serif;
+    font-size: 12px;
+    color: #FFAB32;
+    text-align: right;
+	}
+	
+.UWEPopupPanel-header {
+	padding: 10px;
+}	
+	
+.UWEPopupPanel {
+	border: solid 1px BLACK;
+	background-color: GREY;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+	
+.gcomp-GlassPanel {
+    background-color: black;
+    filter: alpha(opacity=50);
+    opacity: .50;
+}
