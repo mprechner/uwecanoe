@@ -25,13 +25,24 @@ body {
 	
 .titlePanel {
 	background: #ffffff url('titlePanelBg.png') repeat-x right top;
-	border: solid #39badf 1px;
-	margin-top: 10px;
+	border-right: solid BLACK 1px;
+	border-left: solid BLACK 1px;
+	border-bottom: solid BLACK 1px;
+	margin-top: 0px;
 	margin-left: 10px; 
 	margin-right: 10px;
 	margin-bottom: 10px;
 	height: 152px;
-	width: 100%;
+	width: 950px;
+	-moz-border-bottom-left-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -khtml-border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    
+    -moz-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-right-radius: 7px;
+    -khtml-border-bottom-right-radius: 7px;
+    border-bottom-right-radius: 7px;
 	}
 	
 .menuPanel {
@@ -50,14 +61,29 @@ body {
     }
     
 .verticalPhotoPanel {
-    background-color: GREEN;
     margin-left: 10px;
-    }  
+    width: 60px;
+    } 
+
+.photoNoFocus {
+    border: solid 1px #02407b;
+    }   
+    
+.photoFocus {
+    border: solid 1px #FFAB32;
+    }
+    
+ 
+    
+.verticalPhotoPanel img {
+	width: 55px;
+	height: 40px;
+	}
+
     
 .centerConentPanel {
     margin-left: 10px;
-    margin-right: 10px; 
-    width: 100%;
+    width: 655px;
     }
     
 .contentPanel {
@@ -68,12 +94,14 @@ body {
     -khtml-border-radius: 7px;
     border-radius: 7px;
     margin-bottom: 10px;
-    width: 32%;
     float: left;
     margin-right: 7px;
-    font-family:"Trebuchet MS", Arial, serif;
-    
+    font-family:"Trebuchet MS", Arial, serif;   
 }
+
+.quickLinkPanel {
+	width: 32%;
+	}
     
 .titleWelcomeTextLabel {
     border-top: solid BLACK 1px;
@@ -205,6 +233,10 @@ body {
 	float: left;
 	}
 	
+.mainContentWidget {
+	width: 100%;
+	}	
+	
 .editLabel {
 	float: right;
 	font-size: 12px;
@@ -244,4 +276,8 @@ body {
     background-color: black;
     filter: alpha(opacity=50);
     opacity: .50;
+}
+
+.htmlContent {
+	padding: 10px;
 }

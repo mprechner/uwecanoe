@@ -79,8 +79,11 @@ public class UWECanoeView {
         return menuPanel;
     }
     
+    public VerticalPhotoPanel getVerticalPhotoPanel() {
+        return verticalPhotoPanel;
+    }
+    
     public void updateView() {
         titlePanel.updateView();
-        centreContentPanel.updateView();
     }
 }

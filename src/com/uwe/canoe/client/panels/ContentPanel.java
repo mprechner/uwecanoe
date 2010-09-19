@@ -1,52 +1,57 @@
-package com.uwe.canoe.client;
+package com.uwe.canoe.client.panels;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RichTextArea;
+import com.uwe.canoe.client.contentservice.ContentService;
+import com.uwe.canoe.client.contentservice.ContentServiceAsync;
+import com.uwe.canoe.client.login.AuthException;
 
 public class ContentPanel extends Composite {
 
+    private final ContentServiceAsync contentService = GWT.create(ContentService.class);
+    
     /* STYLES */
     public final static String STYLE_CONTENT_WIDGET = "contentWidget";
 
     /** Layout panel containing content panel widgets. */
     public final FlowPanel layoutPanel = new FlowPanel();
     
+    public final FlowPanel contentPanel = new FlowPanel(); 
+    
     private Image titleIcon = null;
     
     private Label titleLabel = null;
-  
-    protected HTML content = null;
     
-    public ContentPanel(String iconUrl, String titleText) {
-        
+    protected String contentId = null;
+    
+    /** List of url images to display */
+    protected List<String> imageUrls = new ArrayList<String>();
+    
+    public ContentPanel(String iconUrl, String contentId) {
+        this.contentId = contentId;
+
         // initialise default icon
         setIcon(iconUrl);
         
         // Initialise default title
-        setTitleLabelText(titleText);
+        setTitleLabelText(contentId);
 
-        content = new HTML("<strong>test</strong><p>test</p>");
-        content.setStyleName("contentWidgetHTML");
-        layoutPanel.add(content);
+        // Add main content panel
+        layoutPanel.add(contentPanel);
+        
         initWidget(layoutPanel);
         
         // Set style
         setStyleName("contentPanel");
        
-    }
-    
-    
-    public void setContent(String text) {
-        content.setHTML(text);
-    }
-    
-    
-    public HTML getContent() {
-        return this.content;
     }
     
     
@@ -81,6 +86,23 @@ public class ContentPanel extends Composite {
         } else {
             titleLabel.setText(title);
         }
+    }
+    
+    /**
+     * Get main content image displayed above content
+     * @return
+     */
+    public String getContentImageUrl() {
+        String imgUrl = imageUrls.get(0);
+        
+        if (imgUrl == null) {
+            imgUrl = "Home.jpg";
+        }
+        return imgUrl;
+    }
+    
+    public List<String> getImageUrls() {
+        return this.imageUrls;
     }
     
 }

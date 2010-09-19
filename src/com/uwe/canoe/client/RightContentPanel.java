@@ -2,6 +2,7 @@ package com.uwe.canoe.client;
 
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.uwe.canoe.client.panels.ContentPanel;
 
 public class RightContentPanel extends Composite {
 	

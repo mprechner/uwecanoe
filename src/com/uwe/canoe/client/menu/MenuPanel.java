@@ -14,6 +14,7 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.Tree.Resources;
 import com.google.gwt.user.client.ui.TreeItem;
+import com.uwe.canoe.client.panels.HomePanel;
 
 /**
  * Create menu panel.
@@ -54,16 +55,43 @@ public class MenuPanel extends Composite {
         // Create flow panel
         flowPanel = new FlowPanel();
         
-        // Add menu nodes
-        TreeItem rootNode = addEmptyMenuTree("Home");
-        
+        // Home
+        TreeItem rootNode = addEmptyMenuTree(HomePanel.HOME);
+
+        // Freshers
+        TreeItem freshersNode = addEmptyMenuTree("Freshers");
+
+        // Forum
+        TreeItem forumNode = addEmptyMenuTree("Forum");
+
+        // Trips
         rootNode = addMenuTree("Trips");
-        addMenuItem(rootNode, "Upcoming Trips");
         addMenuItem(rootNode, "What To Bring");
         
-        rootNode = addMenuTree("Members");
-        addMenuItem(rootNode, "Registration");
+        // Socials
+        TreeItem socialsNode = addEmptyMenuTree("Socials");
         
+        // Pool Sessions
+        TreeItem trainingNode = addEmptyMenuTree("Pool Sessions");
+
+        // Polo
+        TreeItem competitionsNode = addEmptyMenuTree("Polo");
+        
+        // Polo
+        TreeItem slalomNode = addEmptyMenuTree("Slalom");
+        
+        // Media
+        TreeItem mediaNode = addEmptyMenuTree("Media");
+
+        // Committee
+        TreeItem committeeNode = addEmptyMenuTree("Committee");
+
+        // Code of Conduct 
+        TreeItem codeOfConductNode = addEmptyMenuTree("Code of Conduct");
+
+        // Links
+        TreeItem linksNode = addEmptyMenuTree("Links");
+
         // Initialise panel
         initWidget(flowPanel);
         setStyleName(CLASS_MENU_PANEL);  

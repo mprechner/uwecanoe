@@ -25,7 +25,9 @@ public class UWECanoeController {
 
         this.contentController = new ContentController(view,
                 this.model.getContentModel());
-
-        
+    }
+    
+    public ContentController getContentController() {
+        return this.contentController;
     }
 }

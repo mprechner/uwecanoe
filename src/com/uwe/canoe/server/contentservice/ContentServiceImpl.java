@@ -7,6 +7,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 
+import com.google.appengine.api.datastore.Text;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.uwe.canoe.client.contentservice.ContentService;
 import com.uwe.canoe.client.login.AuthException;
@@ -41,12 +42,15 @@ ContentService {
           pm.close();
         }
         
-        
-        return content.getHtml();
+        String strContent = "";
+        if (content != null) {
+            strContent = content.getHtml().getValue();
+        }
+        return strContent;
     }
     
     private Content addContent(String id) {
-        Content newContent = new Content(id, "HTML " + id);
+        Content newContent = new Content(id, new Text("HTML " + id));
         PersistenceManager pm = getPersistenceManager();
         try {
           pm.makePersistent(newContent);
@@ -77,7 +81,7 @@ ContentService {
               content = addContent(id);
           } else {
               content = contentList.get(0);
-              content.setHtml(html);
+              content.setHtml(new Text(html));
           }
         } finally {
           pm.close();

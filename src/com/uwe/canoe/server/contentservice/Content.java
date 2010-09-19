@@ -8,6 +8,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.google.appengine.api.datastore.Text;
+
 /**
  * @author temp
  *
@@ -23,14 +25,14 @@ public class Content {
   @Persistent
   private Date createDate;
   @Persistent
-  private String html;
+  private Text html;
   
 
   public Content() {
     this.createDate = new Date();
   }
 
-  public Content(String contentId, String html) {
+  public Content(String contentId, Text html) {
     this();
     this.contentId = contentId;
     this.html = html;
@@ -44,7 +46,7 @@ public class Content {
     return this.contentId;
   }
   
-    public String getHtml() {
+    public Text getHtml() {
         return this.html;
     }
   
@@ -56,7 +58,7 @@ public class Content {
     this.contentId = contentId;
   }
 
-  public void setHtml(String html) {
+  public void setHtml(Text html) {
     this.html = html;
   }
 }

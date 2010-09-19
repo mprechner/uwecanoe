@@ -2,6 +2,7 @@ package com.uwe.canoe.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -28,12 +29,15 @@ public class UWECanoe implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+
 	    // TODO fix css styles
 	    
 	    // Create main view and models
 	    model = new UWECanoeModel();
 	    view = new UWECanoeView(model);
 	    controller = new UWECanoeController(view, model);
+	    
+	    controller.getContentController().loadContent("Home");
 	    
 	    // Query for login information
 	    doLogin(); 

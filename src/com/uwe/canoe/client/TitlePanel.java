@@ -52,7 +52,7 @@ public class TitlePanel extends Composite {
         signInLink.setStyleName("logLink");
         
         // Create title logo image
-        final Image titleLogoImg = new Image("titleLogo.png");
+        final Image titleLogoImg = new Image("title.png");
         layoutPanel.add(titleLogoImg);
 
         // Create title text logo and position

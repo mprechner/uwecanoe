@@ -1,49 +1,52 @@
 package com.uwe.canoe.client.contentservice;
 
-import com.google.gwt.user.client.ui.Panel;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gwt.user.client.ui.Widget;
+import com.uwe.canoe.client.panels.CodeOfConductPanel;
+import com.uwe.canoe.client.panels.CommitteePanel;
+import com.uwe.canoe.client.panels.ForumPanel;
+import com.uwe.canoe.client.panels.FreshersPanel;
+import com.uwe.canoe.client.panels.HomePanel;
+import com.uwe.canoe.client.panels.InvalidPanelException;
+import com.uwe.canoe.client.panels.LinksPanel;
+import com.uwe.canoe.client.panels.MediaPanel;
+import com.uwe.canoe.client.panels.PoloPanel;
+import com.uwe.canoe.client.panels.PoolPanel;
+import com.uwe.canoe.client.panels.SlalomPanel;
+import com.uwe.canoe.client.panels.SocialsPanel;
+import com.uwe.canoe.client.panels.TripsPanel;
+import com.uwe.canoe.client.panels.WhatToBringPanel;
 
 public class ContentModel {
 
-    private String html = null;
-    
-    private Panel panel = null;
-    
-    private String id = null;
-    
-    /** True if using html content rather than a panel. */
-    private boolean isHtml = true;
-    
+   private Map<String,Widget> contentPanels = new HashMap<String,Widget>();
     
     public ContentModel() {
+        contentPanels.put(HomePanel.HOME, new HomePanel());
+        contentPanels.put("Freshers", new FreshersPanel());
+        contentPanels.put("Forum", new ForumPanel());
+        contentPanels.put("Trips", new TripsPanel());
+        contentPanels.put("Socials", new SocialsPanel());
+        
+        contentPanels.put("Pool Sessions", new PoolPanel());
+
+        contentPanels.put("What To Bring", new WhatToBringPanel());
+        contentPanels.put("Slalom", new SlalomPanel());
+        contentPanels.put("Polo", new PoloPanel());
+        contentPanels.put("Media", new MediaPanel());
+        contentPanels.put("Committee", new CommitteePanel());
+        contentPanels.put("Code of Conduct", new CodeOfConductPanel());
+        contentPanels.put("Links", new LinksPanel());
     }
     
-    public void setHtml(String html) {
-        this.isHtml = true;
-        this.html = html;
+    public Widget getPanel(final String id) throws InvalidPanelException {
+        if (!contentPanels.containsKey(id)) {
+            throw new InvalidPanelException();
+        }
+        
+        return contentPanels.get(id);
     }
-    
-    public String getHtml() {
-        return this.html;
-    }
-    
-    public void setPanel(Panel panel) {
-        this.isHtml = false;
-        this.panel = panel;
-    }
-    
-    public Panel getPanel() {
-        return this.panel;
-    }
-    
-    public void setId(String id) {
-        this.id = id;
-    }
-    
-    public String getId() {
-        return this.id;
-    }
-    
-    public boolean isHtml() {
-        return isHtml;
-    }
+   
 }
